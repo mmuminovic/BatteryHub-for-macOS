@@ -1,5 +1,7 @@
 # 🔋 Battery Hub
 
+![Battery Hub in the macOS menu bar](AppStore/screenshots/batteryhub_mac_01_1440.png)
+
 A macOS menu bar app that shows the battery level of all your connected Bluetooth devices:
 
 ```
