@@ -1,87 +1,87 @@
 # 🔋 Battery Hub
 
-macOS menu bar aplikacija koja prikazuje bateriju svih tvojih povezanih Bluetooth uređaja:
+A macOS menu bar app that shows the battery level of all your connected Bluetooth devices:
 
 ```
 🎧 14%   🖱 25%   ⌨️ 10%
 ```
 
-- **Raširen prikaz** (podrazumevano pri svakom pokretanju): ikonica + procenat za svaki uređaj.
-- **Skupljen prikaz**: jedna ikonica baterije koja pokazuje najslabiji uređaj.
-- **Crveno** kad je uređaj na 20% ili manje.
-- AirPods: u menu baru slabija slušalica, u meniju L / D / kutija posebno.
-- Jezici: engleski (osnovni), srpski, bosanski, hrvatski — prati jezik sistema.
+- **Expanded view** (default on every launch): an icon + percentage for each device.
+- **Collapsed view**: a single battery icon showing the lowest device.
+- **Red** when a device is at 20% or below.
+- AirPods: the weaker earbud in the menu bar; left / right / case shown separately in the menu.
+- Languages: English (base), Serbian, Bosnian, Croatian — follows the system language.
 
-Zahteva macOS 13 Ventura ili noviji. Sandboxovana je i spremna za Mac App Store.
+Requires macOS 13 Ventura or later. Sandboxed and ready for the Mac App Store.
 
-## Pokretanje
+## Building
 
-Treba ti Xcode i [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
+You need Xcode and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
 
 ```bash
-./build.sh            # Release build u build/DerivedData i pokreni ga
-./build.sh install    # isto, ali instalira u /Applications (preporučeno)
-./build.sh demo       # Debug build sa izmišljenim uređajima (za screenshotove)
+./build.sh            # Release build into build/DerivedData and launch it
+./build.sh install    # same, but installs into /Applications (recommended)
+./build.sh demo       # Debug build with fake devices (for screenshots)
 ```
 
-Prvi put će macOS pitati za **Bluetooth dozvolu** → klikni **Allow / Dozvoli**.
-(Ako je slučajno odbiješ: meni nudi stavku koja otvara System Settings → Privacy & Security → Bluetooth.)
+On first launch macOS will ask for **Bluetooth permission** → click **Allow**.
+(If you deny it by accident, the menu offers an item that opens System Settings → Privacy & Security → Bluetooth.)
 
-`project.yml` je izvor istine za Xcode projekat. Posle dodavanja fajlova ili promene podešavanja:
-`xcodegen generate` (ručne izmene u Xcode-u se gube pri sledećem generisanju).
+`project.yml` is the source of truth for the Xcode project. After adding files or changing settings, run
+`xcodegen generate` (manual edits made in Xcode are lost on the next generation).
 
-## Korišćenje
+## Usage
 
-| Akcija | Šta radi |
+| Action | What it does |
 |---|---|
-| Klik na ikonicu | Meni sa svim uređajima i detaljima |
-| **⌥ Option + klik** | Odmah skupi / raširi prikaz u menu baru |
-| Meni → Skupi / Raširi u menu baru | Isto kao ⌥-klik |
-| Meni → Osveži sada | Ručno osvežavanje (inače na 60 s + pri povezivanju uređaja) |
-| Meni → Pokreni pri prijavi | Automatski start kad se uloguješ |
-| Hover preko ikonica | Tooltip sa imenima i procentima |
+| Click the icon | Menu with all devices and details |
+| **⌥ Option-click** | Instantly collapse / expand the menu bar view |
+| Menu → Collapse / Expand in Menu Bar | Same as ⌥-click |
+| Menu → Refresh Now | Manual refresh (otherwise every 60 s + when a device connects) |
+| Menu → Launch at Login | Start automatically when you log in |
+| Hover over the icons | Tooltip with names and percentages |
 
-## Odakle dolaze podaci
+## Where the data comes from
 
-Aplikacija kombinuje četiri izvora i spaja duplikate:
+The app combines four sources and merges duplicates:
 
-1. **IOKit** — Apple Magic Keyboard / Mouse / Trackpad (bez dozvole)
-2. **system_profiler** — AirPods, Beats, i slušalice drugih proizvođača za koje macOS zna bateriju
-3. **IOBluetooth** — ostali povezani klasični Bluetooth uređaji (tek posle Bluetooth dozvole)
-4. **BLE Battery Service** — Logitech MX i drugi Bluetooth Low Energy uređaji
+1. **IOKit** — Apple Magic Keyboard / Mouse / Trackpad (no permission needed)
+2. **system_profiler** — AirPods, Beats, and third-party headphones whose battery macOS knows about
+3. **IOBluetooth** — other connected classic Bluetooth devices (only after Bluetooth permission is granted)
+4. **BLE Battery Service** — Logitech MX and other Bluetooth Low Energy devices
 
-Ako uređaj uopšte ne šalje nivo baterije preko Bluetooth-a (neke jeftinije slušalice, ili Logitech
-preko Bolt/Unifying USB prijemnika umesto Bluetooth-a), pojaviće se u meniju sa „—", ali ne i u menu baru.
+If a device doesn't report its battery level over Bluetooth at all (some cheaper headphones, or Logitech
+devices connected via a Bolt/Unifying USB receiver instead of Bluetooth), it appears in the menu with "—" but not in the menu bar.
 
-## Prilagođavanje
+## Customization
 
-- Prag za crveno: `BatteryDevice.lowThreshold` u `Sources/BatteryDevice.swift`
-- Interval osvežavanja: `BatteryMonitor.refreshInterval` u `Sources/BatteryMonitor.swift`
-- Redosled i ikonice: `DeviceKind.sortOrder` / `symbolNames` u `Sources/BatteryDevice.swift`
-- Tekstovi: `Resources/<jezik>.lproj/Localizable.strings`
+- Red threshold: `BatteryDevice.lowThreshold` in `Sources/BatteryDevice.swift`
+- Refresh interval: `BatteryMonitor.refreshInterval` in `Sources/BatteryMonitor.swift`
+- Order and icons: `DeviceKind.sortOrder` / `symbolNames` in `Sources/BatteryDevice.swift`
+- Strings: `Resources/<language>.lproj/Localizable.strings`
 
-## Debug argumenti (samo Debug build)
+## Debug arguments (Debug build only)
 
-| Argument | Šta radi |
+| Argument | What it does |
 |---|---|
-| `-DemoDevices` | Izmišljeni uređaji (AirPods Pro, Magic Keyboard na 14%…) umesto pravih — bez Bluetooth-a |
-| `-OpenMenu` | Otvori meni 1,5 s posle pokretanja |
-| `-ExportStatusItem` | Iscrta menu bar prikaz na 4x i pošalje PNG kao base64 na stderr (`EXPORT <ime> <base64>`) |
-| `-DumpSources` | Ispiše na stderr šta je koji izvor pročitao |
+| `-DemoDevices` | Fake devices (AirPods Pro, Magic Keyboard at 14%…) instead of real ones — no Bluetooth needed |
+| `-OpenMenu` | Opens the menu 1.5 s after launch |
+| `-ExportStatusItem` | Renders the menu bar view at 4x and writes the PNG as base64 to stderr (`EXPORT <name> <base64>`) |
+| `-DumpSources` | Prints to stderr what each source read |
 
 ## Mac App Store
 
-Sve za App Store je u `AppStore/`:
+Everything for the App Store lives in `AppStore/`:
 
-- `AppStore/metadata.md` — naziv, podnaslov, opis, ključne reči, privatnost, napomene za review (EN + HR)
-- `AppStore/screenshots/` — 5 screenshotova 2880 × 1800 (+ 1440 × 900)
-- `AppStore/icon/` — vektorski master ikonice (SVG + VectorCraft) i 1024 PNG
+- `AppStore/metadata.md` — name, subtitle, description, keywords, privacy, review notes (EN + HR)
+- `AppStore/screenshots/` — 5 screenshots at 2880 × 1800 (+ 1440 × 900)
+- `AppStore/icon/` — vector icon masters (SVG + VectorCraft) and a 1024 PNG
 
-Objava nove verzije:
+Releasing a new version:
 
-1. U `project.yml` podigni `CURRENT_PROJECT_VERSION` (svaki upload) i `MARKETING_VERSION` (svaka verzija).
-2. `scripts/release-appstore.sh` — arhivira i šalje build u App Store Connect
-   (`--export-only` samo napravi `dist/appstore-export/Battery Hub.pkg`).
+1. In `project.yml`, bump `CURRENT_PROJECT_VERSION` (every upload) and `MARKETING_VERSION` (every version).
+2. Run `scripts/release-appstore.sh` — archives and uploads the build to App Store Connect
+   (`--export-only` just builds `dist/appstore-export/Battery Hub.pkg`).
 
-Potpisivanje je automatsko (cloud-managed Apple Distribution, tim 39KMKDXSBT), Xcode mora biti ulogovan.
+Signing is automatic (cloud-managed Apple Distribution, team 39KMKDXSBT); Xcode must be signed in.
 Bundle ID: `com.mmuminovic.batteryhub`.
