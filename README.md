@@ -14,6 +14,11 @@ A macOS menu bar app that shows the battery level of all your connected Bluetoot
 
 Requires macOS 13 Ventura or later. Sandboxed and ready for the Mac App Store.
 
+## Download
+
+Get the latest signed DMG from [Releases](https://github.com/mmuminovic/BatteryHub-for-macOS/releases/latest),
+open it, and drag **Battery Hub** to **Applications**.
+
 ## Building
 
 You need Xcode and [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`).
@@ -83,5 +88,10 @@ Releasing a new version:
 2. Run `scripts/release-appstore.sh` — archives and uploads the build to App Store Connect
    (`--export-only` just builds `dist/appstore-export/Battery Hub.pkg`).
 
-Signing is automatic (cloud-managed Apple Distribution, team 39KMKDXSBT); Xcode must be signed in.
+For a GitHub release, `scripts/release-dmg.sh` builds a Developer ID–signed and notarized
+`dist/BatteryHub-<version>.dmg` (+ `.sha256`). Notarization needs a keychain profile created once with
+`xcrun notarytool store-credentials batteryhub-notary --apple-id <id> --team-id 39KMKDXSBT`,
+then run `NOTARY_PROFILE=batteryhub-notary scripts/release-dmg.sh`.
+
+App Store signing is automatic (cloud-managed Apple Distribution, team 39KMKDXSBT); Xcode must be signed in.
 Bundle ID: `com.mmuminovic.batteryhub`.
