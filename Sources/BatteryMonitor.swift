@@ -19,6 +19,7 @@ final class BatteryMonitor: NSObject {
     private var hidCache: [BatteryDevice] = []
     private var bluetoothCache: [BatteryDevice] = []
     private var profilerCache: [BatteryDevice] = []
+    private var kindHints: [String: DeviceKind] = [:]
     private var profilerRunning = false
     private var profilerPending = false
 
@@ -83,13 +84,14 @@ final class BatteryMonitor: NSObject {
         if DemoData.isEnabled { return }
         #endif
         hidCache = HIDBatterySource.read()
+        kindHints = HIDBatterySource.kindHints()
         bluetoothCache = ble.isAccessGranted ? IOBluetoothBatterySource.read() : []
         ble.refresh()
         #if DEBUG
         if ProcessInfo.processInfo.arguments.contains("-DumpSources") {
             let line = "SOURCES hid=\(hidCache.map { "\($0.name):\($0.level ?? -1)" }) "
                 + "iobt=\(bluetoothCache.map { "\($0.name):\($0.displayLevel ?? -1)" }) "
-                + "ble=\(ble.devices.count) profiler=\(profilerCache.map { "\($0.name):\($0.displayLevel ?? -1)" })\n"
+                + "ble=\(ble.devices.map { "\($0.name):\($0.level ?? -1)" }) profiler=\(profilerCache.map { "\($0.name):\($0.displayLevel ?? -1)" })\n"
             FileHandle.standardError.write(line.data(using: .utf8)!)
         }
         #endif
@@ -120,8 +122,16 @@ final class BatteryMonitor: NSObject {
 
     private func publish() {
         // Redosled = prioritet podataka kad se isti uređaj pojavi u više izvora.
-        let merged = BatteryDevice.merge([hidCache, profilerCache, bluetoothCache, ble.devices])
+        let merged = BatteryDevice.merge([hidCache, profilerCache, bluetoothCache, ble.devices],
+                                         kindHints: kindHints)
         lastUpdate = Date()
+        #if DEBUG
+        if ProcessInfo.processInfo.arguments.contains("-DumpSources") {
+            let line = "MERGED hints=\(kindHints) profiler=\(profilerCache.map { "\($0.name):\($0.kind)" }) "
+                + "devices=\(merged.map { "\($0.name):\($0.kind):\($0.displayLevel ?? -1)" })\n"
+            FileHandle.standardError.write(line.data(using: .utf8)!)
+        }
+        #endif
         guard merged != devices else { return }
         devices = merged
         onChange?(merged)

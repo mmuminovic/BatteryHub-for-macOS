@@ -61,7 +61,8 @@ enum DeviceKind: Int {
             || n.contains("dualshock") || n.contains("xbox") || n.contains("joy-con") { return .gamepad }
         if n.contains("mouse") || n.contains("mx master") || n.contains("mx anywhere")
             || n.contains("miš") { return .mouse }
-        if n.contains("keyboard") || n.contains("keys") || n.contains("tastatura") { return .keyboard }
+        if n.contains("keyboard") || n.contains("keys") || n.contains("mchncl") || n.contains("mechanical")
+            || n.contains("tastatura") { return .keyboard }
         if n.contains("pencil") { return .pencil }
 
         if let h = hint?.lowercased() {
@@ -166,7 +167,8 @@ struct BatteryDevice: Equatable {
     }
 
     /// Spaja liste iz više izvora (redosled = prioritet) i sortira za prikaz.
-    static func merge(_ lists: [[BatteryDevice]]) -> [BatteryDevice] {
+    /// `kindHints` (normalizovano ime → vrsta) popunjava vrstu uređajima koje nijedan izvor nije prepoznao.
+    static func merge(_ lists: [[BatteryDevice]], kindHints: [String: DeviceKind] = [:]) -> [BatteryDevice] {
         var merged: [BatteryDevice] = []
         for list in lists {
             for device in list {
@@ -176,6 +178,9 @@ struct BatteryDevice: Equatable {
                     merged.append(device)
                 }
             }
+        }
+        for index in merged.indices where merged[index].kind == .other {
+            if let hint = kindHints[merged[index].normalizedName] { merged[index].kind = hint }
         }
         return merged.sorted { lhs, rhs in
             if lhs.kind.sortOrder != rhs.kind.sortOrder { return lhs.kind.sortOrder < rhs.kind.sortOrder }
