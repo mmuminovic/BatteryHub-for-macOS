@@ -1,0 +1,418 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4044E0E988D6984B71B8F5FF /* BLEBatterySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CECA65701331865B78F3D04 /* BLEBatterySource.swift */; };
+		5FB4260E4B82E31982A9495C /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E80F7BC0021EA6343C85914 /* main.swift */; };
+		66D9C101CCC972926C627D55 /* L10n.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB01C85A1E37CA45CB3D3530 /* L10n.swift */; };
+		777E26C8A728D88F27046EFC /* StatusBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4810481019D10126AD82D25B /* StatusBarController.swift */; };
+		968D75110830776AB4A462DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD6889E7B36C84EA38CFFDA5 /* AppDelegate.swift */; };
+		C143C505FB71D478D66EFB45 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A1E16E65D21716E370F15F8 /* Assets.xcassets */; };
+		C6C9EF11F25A34BA9C8DAC24 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 830FB90DF15C60421A42567E /* InfoPlist.strings */; };
+		D278CD10789FA702620DF242 /* HIDBatterySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55D34F9F6E79F6B7301051F1 /* HIDBatterySource.swift */; };
+		D2B2EA4A1D81091EEF2F768C /* IOBluetoothBatterySource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32DDCE8FDA28DB5307BABF2 /* IOBluetoothBatterySource.swift */; };
+		D817E8C5ED8DF4A457C91788 /* DemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C03901A1EE416BBE7CDB606 /* DemoData.swift */; };
+		D950BE9AE7ABF4A973B4B743 /* BatteryDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9E09C004CD8F27BADF68E3 /* BatteryDevice.swift */; };
+		DD6324A5063A57446F292E2C /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 481AEF6C30CB1131B88A9542 /* Localizable.strings */; };
+		EC1B2431B62194D0E8972237 /* BatteryMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4275A5FEC2558E17D5B89962 /* BatteryMonitor.swift */; };
+		ED2B0A42334FBC23F6C2FFE1 /* SystemProfilerSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C813CF01F680B2B02625114A /* SystemProfilerSource.swift */; };
+		FE472FB97EE02F6B569BE485 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 46F2B9089DC6043DBF8425B4 /* PrivacyInfo.xcprivacy */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B6D0F9AA650DF9AE62CBC42 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0CECA65701331865B78F3D04 /* BLEBatterySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEBatterySource.swift; sourceTree = "<group>"; };
+		1F348EE0F73E6A11B9C01C0B /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		3F2B8912602A15EA659699F2 /* hr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hr; path = hr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4275A5FEC2558E17D5B89962 /* BatteryMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryMonitor.swift; sourceTree = "<group>"; };
+		46F2B9089DC6043DBF8425B4 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		4810481019D10126AD82D25B /* StatusBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusBarController.swift; sourceTree = "<group>"; };
+		4E80F7BC0021EA6343C85914 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		55D34F9F6E79F6B7301051F1 /* HIDBatterySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HIDBatterySource.swift; sourceTree = "<group>"; };
+		6B9E09C004CD8F27BADF68E3 /* BatteryDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDevice.swift; sourceTree = "<group>"; };
+		78BC485060C6DF9D1F870C2D /* sr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sr; path = sr.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A1E16E65D21716E370F15F8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		88F0493B2C6E6020249E7F37 /* bs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bs; path = bs.lproj/Localizable.strings; sourceTree = "<group>"; };
+		8C03901A1EE416BBE7CDB606 /* DemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoData.swift; sourceTree = "<group>"; };
+		8EA575C26F6C8B24580308C0 /* BatteryHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A0F851452D2708DC990AFEFF /* bs */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = bs; path = bs.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A32DDCE8FDA28DB5307BABF2 /* IOBluetoothBatterySource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBluetoothBatterySource.swift; sourceTree = "<group>"; };
+		AAF043CD8E5F1C872B28FA49 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AD6889E7B36C84EA38CFFDA5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C813CF01F680B2B02625114A /* SystemProfilerSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SystemProfilerSource.swift; sourceTree = "<group>"; };
+		D628D42632361977DCC33C66 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		EB01C85A1E37CA45CB3D3530 /* L10n.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = L10n.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		002DB446C47AEBFC67BC451D = {
+			isa = PBXGroup;
+			children = (
+				C554BC9F3CC36E77432076DD /* Resources */,
+				476009B1CA037D4147EBCCC6 /* Sources */,
+				65F597F12CEF68259C141AC9 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		476009B1CA037D4147EBCCC6 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				AD6889E7B36C84EA38CFFDA5 /* AppDelegate.swift */,
+				6B9E09C004CD8F27BADF68E3 /* BatteryDevice.swift */,
+				4275A5FEC2558E17D5B89962 /* BatteryMonitor.swift */,
+				0CECA65701331865B78F3D04 /* BLEBatterySource.swift */,
+				8C03901A1EE416BBE7CDB606 /* DemoData.swift */,
+				55D34F9F6E79F6B7301051F1 /* HIDBatterySource.swift */,
+				A32DDCE8FDA28DB5307BABF2 /* IOBluetoothBatterySource.swift */,
+				EB01C85A1E37CA45CB3D3530 /* L10n.swift */,
+				4E80F7BC0021EA6343C85914 /* main.swift */,
+				4810481019D10126AD82D25B /* StatusBarController.swift */,
+				C813CF01F680B2B02625114A /* SystemProfilerSource.swift */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		65F597F12CEF68259C141AC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8EA575C26F6C8B24580308C0 /* BatteryHub.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C554BC9F3CC36E77432076DD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7A1E16E65D21716E370F15F8 /* Assets.xcassets */,
+				46F2B9089DC6043DBF8425B4 /* PrivacyInfo.xcprivacy */,
+				830FB90DF15C60421A42567E /* InfoPlist.strings */,
+				481AEF6C30CB1131B88A9542 /* Localizable.strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E8AF658A933FAADA6498E013 /* BatteryHub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5D1767FB7853324266EE8747 /* Build configuration list for PBXNativeTarget "BatteryHub" */;
+			buildPhases = (
+				AA7690074E3AFE647D07FB9D /* Sources */,
+				EADC06E8C90770C2CA2CADC3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatteryHub;
+			packageProductDependencies = (
+			);
+			productName = BatteryHub;
+			productReference = 8EA575C26F6C8B24580308C0 /* BatteryHub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		45C328C8416135D15329479F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1600;
+				TargetAttributes = {
+					E8AF658A933FAADA6498E013 = {
+						DevelopmentTeam = 39KMKDXSBT;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1F6D678F0C940761798A05B2 /* Build configuration list for PBXProject "BatteryHub" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				bs,
+				en,
+				hr,
+				sr,
+			);
+			mainGroup = 002DB446C47AEBFC67BC451D;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 65F597F12CEF68259C141AC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E8AF658A933FAADA6498E013 /* BatteryHub */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EADC06E8C90770C2CA2CADC3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C143C505FB71D478D66EFB45 /* Assets.xcassets in Resources */,
+				C6C9EF11F25A34BA9C8DAC24 /* InfoPlist.strings in Resources */,
+				DD6324A5063A57446F292E2C /* Localizable.strings in Resources */,
+				FE472FB97EE02F6B569BE485 /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AA7690074E3AFE647D07FB9D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				968D75110830776AB4A462DC /* AppDelegate.swift in Sources */,
+				4044E0E988D6984B71B8F5FF /* BLEBatterySource.swift in Sources */,
+				D950BE9AE7ABF4A973B4B743 /* BatteryDevice.swift in Sources */,
+				EC1B2431B62194D0E8972237 /* BatteryMonitor.swift in Sources */,
+				D817E8C5ED8DF4A457C91788 /* DemoData.swift in Sources */,
+				D278CD10789FA702620DF242 /* HIDBatterySource.swift in Sources */,
+				D2B2EA4A1D81091EEF2F768C /* IOBluetoothBatterySource.swift in Sources */,
+				66D9C101CCC972926C627D55 /* L10n.swift in Sources */,
+				777E26C8A728D88F27046EFC /* StatusBarController.swift in Sources */,
+				ED2B0A42334FBC23F6C2FFE1 /* SystemProfilerSource.swift in Sources */,
+				5FB4260E4B82E31982A9495C /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		481AEF6C30CB1131B88A9542 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				88F0493B2C6E6020249E7F37 /* bs */,
+				D628D42632361977DCC33C66 /* en */,
+				3F2B8912602A15EA659699F2 /* hr */,
+				78BC485060C6DF9D1F870C2D /* sr */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		830FB90DF15C60421A42567E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A0F851452D2708DC990AFEFF /* bs */,
+				AAF043CD8E5F1C872B28FA49 /* en */,
+				0B6D0F9AA650DF9AE62CBC42 /* hr */,
+				1F348EE0F73E6A11B9C01C0B /* sr */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		43EB756880DAECE25E6CBA79 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BatteryHub.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXECUTABLE_NAME = BatteryHub;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuminovic.batteryhub;
+				PRODUCT_MODULE_NAME = BatteryHub;
+				PRODUCT_NAME = "Battery Hub";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C080CFFEF2AB74AE99563429 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BatteryHub.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				EXECUTABLE_NAME = BatteryHub;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mmuminovic.batteryhub;
+				PRODUCT_MODULE_NAME = BatteryHub;
+				PRODUCT_NAME = "Battery Hub";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		C6232A31B2AC08D826F18F67 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 39KMKDXSBT;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		D53FF854576EA859E84C085E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 39KMKDXSBT;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 1.0.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F6D678F0C940761798A05B2 /* Build configuration list for PBXProject "BatteryHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D53FF854576EA859E84C085E /* Debug */,
+				C6232A31B2AC08D826F18F67 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		5D1767FB7853324266EE8747 /* Build configuration list for PBXNativeTarget "BatteryHub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C080CFFEF2AB74AE99563429 /* Debug */,
+				43EB756880DAECE25E6CBA79 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 45C328C8416135D15329479F /* Project object */;
+}

@@ -1,0 +1,3 @@
+"NSBluetoothAlwaysUsageDescription" = "Battery Hub čita razinu baterije tvojih povezanih Bluetooth uređaja (slušalice, miš, tipkovnica…) kako bi je prikazao u traci izbornika.";
+"CFBundleDisplayName" = "Battery Hub";
+"NSHumanReadableCopyright" = "© 2026 Muhamed Muminovic";
